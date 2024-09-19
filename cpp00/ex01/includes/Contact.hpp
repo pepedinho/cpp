@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:22:03 by itahri            #+#    #+#             */
-/*   Updated: 2024/09/19 14:30:32 by itahri           ###   ########.fr       */
+/*   Updated: 2024/09/19 23:06:57 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@
 # include <iostream>
 
 class Contact {
-  public:
+  private:
     int date;
     std::string first_name;
     std::string last_name;
     std::string nick_name;
     std::string phone_number;
     std::string darkest_secret;
+  public:
+    Contact();
+    std::string get_first_name();
+    std::string get_last_name();
+    std::string get_nick_name();
+    std::string get_phone_number();
+    int         get_date();
+    void        inc_date();
+    void        create_contact();
 };
 
 # endif
