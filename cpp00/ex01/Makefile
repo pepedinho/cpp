@@ -6,7 +6,7 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/09/19 23:31:12 by itahri           ###   ########.fr        #
+#    Updated: 2024/09/19 23:32:52 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_FILE =	$(addprefix srcs/, main.cpp \
 
 INCLUDE = -I include/
 
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 OBJS = $(OBJ_FILE)
 
