@@ -32,8 +32,12 @@ std::string Contact::get_phone_number() {
   return this->phone_number;
 }
 
+std::string Contact::get_secret() {
+  return this->darkest_secret;
+}
+
 int Contact::get_date() {
-  return this->get_date();
+  return this->date;
 }
 
 void Contact::inc_date() {

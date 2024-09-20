@@ -58,7 +58,7 @@ int PhoneBook::get_search_index() {
     return -1;
   }
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  if (index > 8 || index > this->contact_cnt) {
+  if (index > 8 || index > this->contact_cnt - 1) {
     std::cout << "Error ! : Invalid index" << std::endl;
     return -1;
   }
@@ -76,9 +76,11 @@ std::string PhoneBook::truncate(std::string str)
 }
 
 void PhoneBook::search() {
+  for (int i = 0; i <= this->contact_cnt - 1; i++)
+    display_contact(this->contact[i], i);
   int index = this->get_search_index();
   if (index >= 0)
-    display_info(this->contact[index], index);
+    this->display_infos(this->contact[index]);
 }
 
 void format_display(std::string str)
@@ -114,7 +116,7 @@ void display_index(int index)
   std::cout << "|";
 }
 
-void PhoneBook::display_info(Contact contact, int index) {
+void PhoneBook::display_contact(Contact contact, int index) {
   std::string f_name = truncate(contact.get_first_name());
   std::string l_name = truncate(contact.get_last_name());
   std::string nick_name = truncate(contact.get_nick_name());
@@ -123,4 +125,24 @@ void PhoneBook::display_info(Contact contact, int index) {
   format_display(l_name);
   format_display(nick_name);
   std::cout << std::endl;
+}
+
+void PhoneBook::display_infos(Contact contact)
+{
+  std::string f_name = contact.get_first_name();
+  std::string l_name = contact.get_last_name();
+  std::string n_name = contact.get_nick_name();
+  std::string phone_number = contact.get_phone_number();
+  std::string secret = contact.get_secret();
+
+  std::cout << "First Name : ";
+  std::cout << f_name << std::endl;
+  std::cout << "Last Name : ";
+  std::cout << l_name << std::endl;
+  std::cout << "Nickname : ";
+  std::cout << n_name << std::endl;
+  std::cout << "Phone Number : ";
+  std::cout << phone_number << std::endl;
+  std::cout << "Secret : ";
+  std::cout << secret << std::endl;
 }

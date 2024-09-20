@@ -30,6 +30,7 @@ class Contact {
     std::string get_last_name();
     std::string get_nick_name();
     std::string get_phone_number();
+    std::string get_secret();
     int         get_date();
     void        inc_date();
     void        create_contact();
