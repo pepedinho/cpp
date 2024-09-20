@@ -51,7 +51,17 @@ int PhoneBook::get_search_index() {
   int index;
   std::cout << "Contact index : ";
   std::cin >> index;
-  std::cin.clear();
+  if (!std::cin) {
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout << "invalid input\n";
+    return -1;
+  }
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  if (index > 8 || index > this->contact_cnt) {
+    std::cout << "Error ! : Invalid index" << std::endl;
+    return -1;
+  }
   return index;
 }
 
@@ -67,11 +77,13 @@ std::string PhoneBook::truncate(std::string str)
 
 void PhoneBook::search() {
   int index = this->get_search_index();
-  display_info(this->contact[index], index);
+  if (index >= 0)
+    display_info(this->contact[index], index);
 }
 
 void format_display(std::string str)
 {
+  static int ite;
   int rest = 10 - str.length();
   int correction;
   for (int i = 0; i < rest / 2; i++)
@@ -84,14 +96,29 @@ void format_display(std::string str)
     std::cout << " ";
     correction++;
   }
+  if (ite < 2) {
+    std::cout << "|";
+    ite++;
+  }
+  else
+    ite = 0;
+}
+
+void display_index(int index)
+{
+  for (int i = 0; i < 4; i++)
+    std::cout << " ";
+  std::cout << index;
+  for (int i = 0; i < 5; i++)
+    std::cout << " ";
   std::cout << "|";
 }
 
 void PhoneBook::display_info(Contact contact, int index) {
-  (void)index;
   std::string f_name = truncate(contact.get_first_name());
   std::string l_name = truncate(contact.get_last_name());
   std::string nick_name = truncate(contact.get_nick_name());
+  display_index(index);
   format_display(f_name);
   format_display(l_name);
   format_display(nick_name);
