@@ -40,18 +40,33 @@ void Contact::inc_date() {
   this->date++;
 }
 
-void Contact::create_contact() {
+std::string read_input(void) 
+{
+  std::string input;
+
+  std::cin.clear();
+  std::getline(std::cin, input);
+  if (std::cin.eof()) {
+    std::cin.clear();
+    std::cout << "error" << std::endl;
+    input = "NULL";
+  }
+  return (input);
+}
+
+void Contact::create_contact() 
+{
     std::string first_name, last_name, nickname, phone_number, darkest_secret;
     std::cout << "first name : ";
-    std::cin >> first_name;
+    first_name = read_input();
     std::cout << "last name : ";
-    std::cin >> last_name;
+    last_name = read_input();
     std::cout << "nick name : ";
-    std::cin >> nickname;
+    nickname = read_input();
     std::cout << "phone number : ";
-    std::cin >> phone_number;
+    phone_number = read_input();
     std::cout << "darkest secret : ";
-    std::cin >> darkest_secret;
+    darkest_secret = read_input();
     this->first_name = first_name;
     this->last_name = last_name;
     this->nick_name = nickname;

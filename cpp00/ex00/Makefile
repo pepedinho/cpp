@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 
 NAME = megaphone
 
-all : $(LIBFT) $(NAME)
+all : $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c  $< -o $@ 

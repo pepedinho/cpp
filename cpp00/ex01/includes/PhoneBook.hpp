@@ -25,7 +25,7 @@ class PhoneBook {
     int         get_older(); // return the oldest contact index
     int         get_search_index();
     std::string truncate(std::string str); // truncate information if nessesary
-    void        display_info(Contact contact); //display information for a index
+    void        display_info(Contact contact, int index); //display information for a index
 
     /* attributs */
     int         contact_cnt;

@@ -14,9 +14,22 @@
 
 int main (int argc, char *argv[]) {
   PhoneBook p_book;
+  std::string cmd;
   (void)argc;
   (void)argv;
-  p_book.add_contact();
-  p_book.search();
+  while (true)
+  {
+    std::cout << "Enter a command > " << std::flush;
+    if (!std::getline(std::cin,cmd)) {
+        std::cout << "error\n";
+        break ;
+    }
+    if (cmd == "EXIT")
+      break ;
+    else if (cmd == "ADD")
+      p_book.add_contact();
+    else if (cmd == "SEARCH")
+      p_book.search();
+  }
   return 0;
 }

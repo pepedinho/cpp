@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 22:46:13 by itahri            #+#    #+#             */
-/*   Updated: 2024/09/19 23:43:04 by itahri           ###   ########.fr       */
+/*   Updated: 2024/09/19 23:11:25 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void PhoneBook::add_contact() {
   if (contact_cnt >= 8)
     contact[this->get_older()] = new_contact;
   else {
-    contact_cnt++;
     contact[contact_cnt] = new_contact;
+    contact_cnt++;
   }
 }
 
@@ -49,30 +49,51 @@ int PhoneBook::get_older() {
 
 int PhoneBook::get_search_index() {
   int index;
-  std::cout << "index : ";
+  std::cout << "Contact index : ";
   std::cin >> index;
+  std::cin.clear();
   return index;
 }
 
 std::string PhoneBook::truncate(std::string str)
 {
-  if (str.length() > 10)
-    return str.substr(0, 10);
+  if (str.length() > 10) {
+    std::string tmp = str.substr(0, 9);
+    tmp.push_back('.');
+    return tmp;
+  }
   return str;
 }
 
 void PhoneBook::search() {
-  display_info(this->contact[this->get_search_index()]);
+  int index = this->get_search_index();
+  display_info(this->contact[index], index);
 }
 
-void PhoneBook::display_info(Contact contact) {
+void format_display(std::string str)
+{
+  int rest = 10 - str.length();
+  int correction;
+  for (int i = 0; i < rest / 2; i++)
+    std::cout << " ";
+  std::cout << str;
+  for (int i = 0; i < (rest / 2); i++)
+    std::cout << " ";
+  correction = ((rest / 2) * 2) + str.length();
+  while (correction < 10) {
+    std::cout << " ";
+    correction++;
+  }
+  std::cout << "|";
+}
+
+void PhoneBook::display_info(Contact contact, int index) {
+  (void)index;
   std::string f_name = truncate(contact.get_first_name());
   std::string l_name = truncate(contact.get_last_name());
   std::string nick_name = truncate(contact.get_nick_name());
-  std::cout << f_name;
-  std::cout << " | ";
-  std::cout << l_name;
-  std::cout << " | ";
-  std::cout << nick_name;
-  std::cout << " | ";
+  format_display(f_name);
+  format_display(l_name);
+  format_display(nick_name);
+  std::cout << std::endl;
 }
