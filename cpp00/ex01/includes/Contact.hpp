@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <algorithm>
+#include <cctype>
 
 class Contact {
   private:

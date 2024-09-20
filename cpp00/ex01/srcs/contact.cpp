@@ -58,6 +58,19 @@ std::string read_input(void)
   return (input);
 }
 
+bool check_number(std::string phone_number)
+{
+  if (phone_number == "NULL")
+    return true;
+  if (phone_number.length() != 10)
+    return false;
+  for (int i = 0; i < 10; i++) {
+    if (phone_number[i] < '0' || phone_number[i] > '9')
+      return false;
+  }
+  return true;
+}
+
 void Contact::create_contact() 
 {
     std::string first_name, last_name, nickname, phone_number, darkest_secret;
@@ -69,6 +82,12 @@ void Contact::create_contact()
     nickname = read_input();
     std::cout << "phone number : ";
     phone_number = read_input();
+    while (!check_number(phone_number))
+    {
+      std::cin.clear();
+      std::cout << "Invalid phone number. Please enter a correct phone number : ";
+      phone_number = read_input();
+    }
     std::cout << "darkest secret : ";
     darkest_secret = read_input();
     this->first_name = first_name;
