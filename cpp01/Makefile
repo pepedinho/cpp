@@ -6,19 +6,17 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/09/19 23:42:44 by itahri           ###   ########.fr        #
+#    Updated: 2024/09/26 14:13:29 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = zombie
 
 CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, phonebook.cpp \
-			contact.cpp \
-			main.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp Zombie.cpp newZombie.cpp randomChump.cpp)
 
 INCLUDE = -I includes/
 
