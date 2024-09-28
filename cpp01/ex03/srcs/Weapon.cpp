@@ -1,15 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 17:26:04 by itahri            #+#    #+#             */
-/*   Updated: 2024/09/28 19:33:50 by itahri           ###   ########.fr       */
+/*   Created: 2024/09/28 17:29:21 by itahri            #+#    #+#             */
+/*   Updated: 2024/09/28 17:36:05 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/HumanB.hpp"
+#include "../includes/Weapon.hpp"
 
+Weapon::Weapon () {};
 
+const std::string &Weapon::getType (void) {
+  const std::string &type = this->type;
+  return type;
+}
+
+void Weapon::setType(std::string type) {
+  this->type = type;
+}
