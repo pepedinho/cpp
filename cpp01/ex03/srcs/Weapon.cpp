@@ -12,7 +12,7 @@
 
 #include "../includes/Weapon.hpp"
 
-Weapon::Weapon () {};
+Weapon::Weapon (std::string type) : type(type) {}
 
 const std::string &Weapon::getType (void) {
   const std::string &type = this->type;

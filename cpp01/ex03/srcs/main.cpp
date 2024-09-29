@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
+
 
 int main (void) {
   

@@ -18,9 +18,11 @@
 # include <string>
 
 class HumanB {
+private:
   Weapon      weapon;
   std::string name;
-  HumanB      ( void );
+public:
+  HumanB      ( std::string name );
   void attack ( void );
 };
 

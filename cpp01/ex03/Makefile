@@ -16,7 +16,7 @@ CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp Zombie.cpp ZombieHord.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp Weapon.cpp HumanA.cpp HumanB.cpp)
 
 INCLUDE = -I includes/
 

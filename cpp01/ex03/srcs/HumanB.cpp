@@ -12,4 +12,8 @@
 
 #include "../includes/HumanB.hpp"
 
+HumanB::HumanB(std::string name) : name(name) {}
 
+void HumanB::attack(void) {
+  std::cout << this->name << "attack with their" << this->weapon.getType() << std::endl;
+}
