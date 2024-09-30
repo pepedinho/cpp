@@ -6,17 +6,17 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/09/28 14:45:01 by itahri           ###   ########.fr        #
+#    Updated: 2024/10/01 01:10:09 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence 
+NAME = replace 
 
 CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp Weapon.cpp HumanA.cpp HumanB.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp File.cpp)
 
 INCLUDE = -I includes/
 
