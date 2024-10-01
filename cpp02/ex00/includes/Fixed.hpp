@@ -22,9 +22,9 @@ class Fixed {
     static const int b = 8;
   public:
     Fixed (void); // default constructor
-    Fixed (const Fixed&); // copy constructor
+    Fixed (const Fixed& src); // copy constructor
     ~Fixed (void); // destructor
-    Fixed& operator=(const Fixed); // affectation operator
+    Fixed& operator=(const Fixed& other); // affectation operator
     int getRawBits( void ) const;
     void setRawBits( int const raw );
 };
