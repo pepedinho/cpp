@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 16:18:42 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/01 09:14:44 by itahri           ###   ########.fr       */
+/*   Created: 2024/10/01 09:06:26 by itahri            #+#    #+#             */
+/*   Updated: 2024/10/01 09:11:16 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/File.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(int argc, char *argv[])
+#include <iostream>
+
+class Harl 
 {
-  if (argc != 4) {
-    std::cerr << "To much args <filename> <s1> <s2> " << std::endl;
-    return 1;
-  }
-  File *file = new File(argv[1], argv[2], argv[3]);
+  private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+  public:
+    Harl  (void);
+    void  complain(std::string level);
+    ~Harl (void);
+};
 
-  file->replace();
-	return 0;
-}
+#endif

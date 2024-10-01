@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 00:11:12 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/01 01:00:54 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/01 09:15:01 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class File {
   public:
     File (std::string filename, std::string toFind, std::string toReplace);
     std::string getFilename(void);
-    void read(void);
+    void replace(void);
     ~File(void);
 };
 
