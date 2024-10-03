@@ -24,10 +24,12 @@ Fixed::Fixed(const Fixed& src) {
   *this = src;
 }
 
+// const int constructor
 Fixed::Fixed(const int n) {
   value = n  * (1 << b);
 }
 
+//const float constructor
 Fixed::Fixed(const float f) {
   value = f * (1 << b);
 }
