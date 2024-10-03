@@ -12,25 +12,31 @@
 
 #include "../includes/Fixed.hpp"
 
+// Constructor
 Fixed::Fixed() {
-  this->setRawBits(0);
   std::cout << "Default constructor called" << std::endl;
+  value = 0;
 };
 
+// Copy constructor
 Fixed::Fixed(const Fixed& src) {
-  this->value = src.value;
   std::cout << "Copy constructor called" << std::endl;
+  *this = src;
 }
 
+// Surcharge d'operateur d'affectation
 Fixed& Fixed::operator=(const Fixed& other) {
   std::cout << "Copy assignment operator called" << std::endl;
-  this->value = other.value;
+  if (this != &other)
+    this->value = other.getRawBits();
   return *this;
 }
 
+// Destructor
 Fixed::~Fixed(void) {
   std::cout << "Destructor called" << std::endl;
 }
+
 
 int Fixed::getRawBits(void) const {
   std::cout << "getRawBits member function called" << std::endl;
