@@ -24,6 +24,14 @@ Fixed::Fixed(const Fixed& src) {
   *this = src;
 }
 
+Fixed::Fixed(const int n) {
+  value = n  * (1 << b);
+}
+
+Fixed::Fixed(const float f) {
+  value = f * (1 << b);
+}
+
 // Surcharge d'operateur d'affectation
 Fixed& Fixed::operator=(const Fixed& other) {
   std::cout << "Copy assignment operator called" << std::endl;
@@ -37,6 +45,14 @@ Fixed::~Fixed(void) {
   std::cout << "Destructor called" << std::endl;
 }
 
+
+float Fixed::toFloat(void) const {
+  return (float)value / (1 << b);
+}
+
+int Fixed::toInt(void) const {
+  return roundf(toFloat());
+}
 
 int Fixed::getRawBits(void) const {
   std::cout << "getRawBits member function called" << std::endl;
