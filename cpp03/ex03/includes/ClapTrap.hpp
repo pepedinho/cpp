@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:10:24 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 14:14:36 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/04 14:14:57 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ClapTrap {
     int         attackDamage;
   public:
     ClapTrap            (void);
-    ClapTrap(std::string name);
+    ClapTrap            (std::string name);
     ClapTrap            (ClapTrap& other);
     ClapTrap& operator= (const ClapTrap& other); // affectation operator
     ~ClapTrap(void);

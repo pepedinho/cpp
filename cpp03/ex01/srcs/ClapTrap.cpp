@@ -6,11 +6,19 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:18:09 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 11:13:20 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/04 15:36:16 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void) {
+  name = "unknown";
+  hitPoint = 10;
+  energyPoint = 10;
+  attackDamage = 0;
+  std::cout << name << " has been invoked" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) {
   this->name = name;
@@ -18,6 +26,18 @@ ClapTrap::ClapTrap(std::string name) {
   energyPoint = 10;
   attackDamage = 0;
   std::cout << name << " has been invoked" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap& other) {
+  *this = other;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+  name = other.name;
+  hitPoint = other.hitPoint;
+  energyPoint = other.energyPoint;
+  attackDamage = other.attackDamage;
+  return *this;
 }
 
 ClapTrap::~ClapTrap(void) {

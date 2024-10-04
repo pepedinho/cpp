@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 10:02:44 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 14:23:27 by itahri           ###   ########.fr       */
+/*   Created: 2024/10/04 12:22:09 by itahri            #+#    #+#             */
+/*   Updated: 2024/10/04 12:34:17 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "../includes/DiamondTrap.hpp"
 
-#include <iostream>
-#include <string>
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
-{
-  public:
-    ScavTrap  (void);
-    ScavTrap  (std::string name);
-    ScavTrap  (ScavTrap& other);
-    ScavTrap& operator= (const ScavTrap& other);
-    ~ScavTrap (void);
-    void      attack(std::string target);
-    void      guardGate(void);
-};
-
-#endif
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), name(name) {
+  std::cout
+    << "DiamondTrap"
+    << name
+    << "has been created with success !"
+    << std::endl;
+}

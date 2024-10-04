@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:18:09 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 13:31:42 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/04 14:13:59 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,4 @@ void ClapTrap::beRepaired(unsigned int amount) {
     << " hit points"
     << std::endl;
 }
+
