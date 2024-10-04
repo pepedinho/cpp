@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:09:29 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 11:32:55 by itahri           ###   ########.fr       */
+/*   Created: 2024/10/04 11:23:20 by itahri            #+#    #+#             */
+/*   Updated: 2024/10/04 11:26:43 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.hpp"
 
-int main(void) 
-{
-  ClapTrap pepe("pepe");
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-  pepe.attack("moussa");
-  pepe.takeDamage(5);
-  pepe.beRepaired(3);
+#include <iostream>
+#include <string>
+#include "ClapTrap.hpp"
 
-  ScavTrap snake("snake");
+class FragTrap: public ClapTrap {
+  public:
+    FragTrap(std::string name);
+    ~FragTrap(void);
+    void highFiveGuys(void);
+};
 
-  snake.attack("ocelot");
-  snake.takeDamage(50);
-  snake.guardGate();
-  snake.beRepaired(20);
-
-}
+#endif

@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:09:29 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 11:32:55 by itahri           ###   ########.fr       */
+/*   Created: 2024/10/04 10:02:44 by itahri            #+#    #+#             */
+/*   Updated: 2024/10/04 11:41:11 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main(void) 
+#include <iostream>
+#include <string>
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-  ClapTrap pepe("pepe");
+  public:
+    ScavTrap  (std::string name);
+    ~ScavTrap (void);
+    void      attack(std::string target);
+    void      guardGate(void);
+};
 
-  pepe.attack("moussa");
-  pepe.takeDamage(5);
-  pepe.beRepaired(3);
-
-  ScavTrap snake("snake");
-
-  snake.attack("ocelot");
-  snake.takeDamage(50);
-  snake.guardGate();
-  snake.beRepaired(20);
-
-}
+#endif
