@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 10:09:43 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 14:31:44 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/04 15:53:05 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
   hitPoint = 100;
   energyPoint = 50;
   attackDamage = 20;
-  std::cout << "ScavTrap" << name << " has been invoked" << std::endl;
+  std::cout << "ScavTrap " << name << " has been invoked" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
