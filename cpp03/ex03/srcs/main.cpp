@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:09:29 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 15:49:36 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/05 18:06:06 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(void)
    miller.takeDamage(56);
    miller.highFiveGuys();
    miller.beRepaired(30);
+   miller.whoAmI();
 
   std::cout
     << "----------------------------destroy----------------------------"

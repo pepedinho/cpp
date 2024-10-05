@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 12:12:52 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/05 18:04:40 by itahri           ###   ########.fr       */
+/*   Created: 2024/10/05 17:06:04 by itahri            #+#    #+#             */
+/*   Updated: 2024/10/05 17:34:44 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 
-class DiamondTrap: public ScavTrap, public FragTrap {
-  private:
-    std::string name;
+class Animal {
+  protected:
+    std::string type;
   public:
-    DiamondTrap(void);
-    DiamondTrap(std::string name);
-    DiamondTrap(DiamondTrap& other);
-    DiamondTrap& operator= (DiamondTrap& other);
-    ~DiamondTrap(void);
-    void attack(std::string target);
-    void whoAmI(void) const;
+    Animal(void);
+    Animal(Animal& other);
+    Animal& operator = (const Animal& other);
+    ~Animal(void);
+    virtual void makeSound(void) const;
+    virtual std::string getType(void) const;
 };
 
 #endif
