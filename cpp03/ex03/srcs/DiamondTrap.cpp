@@ -13,18 +13,29 @@
 #include "../includes/DiamondTrap.hpp"
 
 
-DiamondTrap::DiamondTrap(void) {
-  name = ClapTrap::name;
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap() {
+  name = ClapTrap::name + "_clap_name";
   hitPoint = FragTrap::hitPoint;
   energyPoint = ScavTrap::energyPoint;
   attackDamage = FragTrap::attackDamage;
 } 
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), name(name) {
+  name = ClapTrap::name;
+  hitPoint = FragTrap::hitPoint;
+  energyPoint = ScavTrap::energyPoint;
+  attackDamage = FragTrap::attackDamage;
   std::cout
     << "DiamondTrap "
     << name
     << " has been created with success !"
+    << std::endl;
+  std::cout
+    << energyPoint
+    << " "
+    << attackDamage
+    << " "
+    <<hitPoint
     << std::endl;
 }
 

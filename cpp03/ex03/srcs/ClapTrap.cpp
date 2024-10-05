@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(void) {
   hitPoint = 10;
   energyPoint = 10;
   attackDamage = 0;
-  std::cout << name << " has been invoked" << std::endl;
+  std::cout << "ClapTrap " << name << " has been invoked" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) {
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(std::string name) {
   hitPoint = 10;
   energyPoint = 10;
   attackDamage = 0;
-  std::cout << name << " has been invoked" << std::endl;
+  std::cout << "ClapTrap " << name << " has been invoked" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap& other) {
