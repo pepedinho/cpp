@@ -12,12 +12,12 @@
 
 #include "../includes/Cat.hpp"
 
-Cat::Cat(void) {
+Cat::Cat(void) : Animal() {
   type = "Cat";
   std::cout << "Cat was created with success" << std::endl;
 }
 
-Cat::Cat(Cat& other) {
+Cat::Cat(Cat& other) : Animal() {
   *this = other;
 }
 
@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat& other) {
 }
 
 Cat::~Cat(void) {
-  std::cout << "Dog was detroyed with success" << std::endl;
+  std::cout << "Cat was detroyed with success" << std::endl;
 }
 
 void Cat::makeSound(void) const {

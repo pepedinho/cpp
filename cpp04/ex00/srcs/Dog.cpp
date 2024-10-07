@@ -12,12 +12,12 @@
 
 #include "../includes/Dog.hpp"
 
-Dog::Dog(void) {
+Dog::Dog(void) : Animal() {
   type = "Dog";
   std::cout << "Dog was created with success" << std::endl;
 }
 
-Dog::Dog(Dog& other) {
+Dog::Dog(Dog& other) : Animal() {
   *this = other;
 }
 
