@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 11:27:02 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 15:35:16 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 20:31:58 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ FragTrap::FragTrap(FragTrap& other) {
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& other) {
-  name = other.name;
-  hitPoint = other.hitPoint;
-  energyPoint = other.energyPoint;
-  attackDamage = other.attackDamage;
+  if (this != &other) {
+    name = other.name;
+    hitPoint = other.hitPoint;
+    energyPoint = other.energyPoint;
+    attackDamage = other.attackDamage;
+  }
   return *this;
 }
 

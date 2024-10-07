@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:11:12 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/07 20:30:11 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 20:35:36 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Animal::Animal(Animal& other) {
 Animal& Animal::operator=(const Animal& other) {
   if (this != &other) {
     type = other.type;
-    std::cout << "Animal was copyed with success" << std::endl ;
+    std::cout << "Animal was copyed with success" << std::endl;
   }
   return *this;
 }

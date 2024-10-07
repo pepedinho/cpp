@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 19:28:44 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/07 20:30:35 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 19:28:46 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ WrongAnimal::WrongAnimal(WrongAnimal& other) {
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
-  if (this != &other) {
-    type = other.type;
-    std::cout << "WrongAnimal was copyed with success" << std::endl;
-  }
+  type = other.type;
+  std::cout << "WrongAnimal was copyed with success" << std::endl;
   return *this;
 }
 

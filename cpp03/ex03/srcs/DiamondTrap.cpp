@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 12:22:09 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/05 18:06:41 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 20:31:43 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,12 @@ DiamondTrap::DiamondTrap(DiamondTrap& other) {
 }
 
 DiamondTrap& DiamondTrap::operator=(DiamondTrap& other) {
-  name = other.name;
-  hitPoint = other.hitPoint;
-  energyPoint = other.energyPoint;
-  attackDamage = other.attackDamage;
+  if (this != &other) {
+    name = other.name;
+    hitPoint = other.hitPoint;
+    energyPoint = other.energyPoint;
+    attackDamage = other.attackDamage;
+  }
   return *this;
 }
 

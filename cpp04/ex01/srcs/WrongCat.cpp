@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 19:30:06 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/07 20:30:45 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 19:30:29 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ WrongCat::WrongCat(WrongCat& other) : WrongAnimal() {
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other) {
-  if (this != &other) {
-    type = other.type;
-    std::cout << "WrongCat was copyed with success" << std::endl;
-  }
+  type = other.type;
+  std::cout << "WrongCat was copyed with success" << std::endl;
   return *this;
 }
 

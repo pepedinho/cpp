@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 10:09:43 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/04 15:53:05 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/07 20:32:12 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ ScavTrap::ScavTrap(ScavTrap& other) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-  name = other.name;
-  hitPoint = other.hitPoint;
-  energyPoint = other.energyPoint;
-  attackDamage = other.attackDamage;
+  if (this != &other) {
+    name = other.name;
+    hitPoint = other.hitPoint;
+    energyPoint = other.energyPoint;
+    attackDamage = other.attackDamage;
+  }
   return *this;
 }
 
