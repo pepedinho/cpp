@@ -16,7 +16,7 @@ CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp AMateria.cpp)
 
 INCLUDE = -I includes/
 
