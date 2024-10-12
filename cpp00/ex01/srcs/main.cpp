@@ -6,22 +6,20 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:23:00 by itahri            #+#    #+#             */
-/*   Updated: 2024/09/19 23:39:22 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/12 18:14:34 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../includes/PhoneBook.hpp"
 
-int main (int argc, char *argv[]) {
+int main (void) {
   PhoneBook p_book;
   std::string cmd;
-  (void)argc;
-  (void)argv;
   while (true)
   {
     std::cout << "Enter a command > " << std::flush;
     if (!std::getline(std::cin,cmd)) {
-        std::cout << "error\n";
+        std::cout << "error" << std::endl;
         break ;
     }
     if (cmd == "EXIT")

@@ -6,17 +6,17 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/09/20 18:18:41 by itahri           ###   ########.fr        #
+#    Updated: 2024/09/26 14:13:29 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = phonebook
 
 CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC_FILE =  tests.cpp Account.cpp
+SRC_FILE = $(addprefix srcs/, main.cpp contact.cpp phonebook.cpp)
 
 INCLUDE = -I includes/
 
@@ -26,7 +26,7 @@ OBJS = $(OBJ_FILE)
 
 all: $(NAME)
 
-%.o: %.cpp
+srcs/%.o: srcs/%.cpp
 	$(CPP) $(CPP_FLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJS)
