@@ -120,10 +120,17 @@ void PhoneBook::display_contact(Contact contact, int index) {
   std::string f_name = truncate(contact.get_first_name());
   std::string l_name = truncate(contact.get_last_name());
   std::string nick_name = truncate(contact.get_nick_name());
-  display_index(index);
-  format_display(f_name);
-  format_display(l_name);
-  format_display(nick_name);
+  /*display_index(index);*/
+  std::cout << std::setw(10) <<std::right << index; 
+  std::cout << "|";
+  std::cout << std::setw(10) << std::right << f_name; 
+  std::cout << "|";
+  std::cout << std::setw(10) << std::right << l_name; 
+  std::cout << "|";
+  std::cout << std::setw(10) << std::right << nick_name; 
+  /*format_display(f_name);*/
+  /*format_display(l_name);*/
+  /*format_display(nick_name);*/
   std::cout << std::endl;
 }
 
