@@ -12,6 +12,7 @@
 
 #include "../includes/AMateria.hpp"
 
+// ABSTRACT
 
 AMateria::AMateria(void) {
   type = "unknown";
@@ -39,7 +40,10 @@ std::string const& AMateria::getType(void) const {
   return type;
 }
 
+// ICE
+
 Ice::Ice(void) : AMateria() {
+  type = "ice";
   std::cout << "Ice default constructor called" << std::endl;
 }
 
@@ -63,6 +67,23 @@ void Ice::use(ICharacter& target) {
   std::cout << "* shoot an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
+// CURE
 
+Cure::Cure(void) : AMateria() {
+  type = "cure";
+  std::cout << "Cure default constructor called" << std::endl;
+}
 
+Cure::Cure(const Cure& other) : AMateria(other) {
+  std::cout << "Cure copy constructor called" << std::endl;
+}
 
+Cure& Cure::operator=(const Cure& other) {
+  if (this != &other)
+    AMateria::operator=(other);
+  return *this;
+}
+
+AMateria* Cure::clone() const {
+  return new Cure(*this);
+}

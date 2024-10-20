@@ -6,13 +6,12 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:21 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/09 15:07:11 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/20 23:20:59 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AMateria.hpp"
 
 int main(void) {
-
   return 0;
 }

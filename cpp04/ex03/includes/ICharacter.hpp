@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:20:33 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/09 15:41:25 by itahri           ###   ########.fr       */
+/*   Updated: 2024/10/20 23:28:57 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class ICharacter
   protected:
     std::string name;
   public:
+    ICharacter(void);
+    ICharacter(std::string name);
+    ICharacter(const ICharacter& other);
+    ICharacter& operator=(const ICharacter& other);
     virtual ~ICharacter() {}
     virtual std::string const & getName() const = 0;
     virtual void equip(AMateria* m) = 0;

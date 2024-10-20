@@ -41,4 +41,14 @@ class Ice : public AMateria
     void use(ICharacter& target);
 };
 
+class Cure : public AMateria
+{
+public:
+  Cure(void);
+  Cure(const Cure& other);
+  Cure& operator=(const Cure& other);
+  AMateria* clone() const;
+  void use(ICharacter& target);
+};
+
 #endif 
