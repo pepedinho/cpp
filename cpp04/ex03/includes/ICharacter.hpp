@@ -40,10 +40,14 @@ class Character : public ICharacter
     AMateria* inventory[4];
   public:
     Character(void);
+    Character(std::string name);
     Character(const Character& other);
     Character& operator=(const Character& other);
-    void equip(AMateria* m) = 0;
-    void unequip(int idx) = 0;
+    ~Character();
+    std::string const &getName() const;
+    void equip(AMateria* m);
+    void unequip(int idx);
     void use(int idx, ICharacter& target);
 };
+
 #endif 

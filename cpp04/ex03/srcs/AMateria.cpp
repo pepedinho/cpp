@@ -29,6 +29,10 @@ AMateria::AMateria(const AMateria& other) {
   std::cout << "AMateria copy constructor called" << std::endl;
 }
 
+AMateria::~AMateria() {
+  std::cout << "AMateria destructor called" << std::endl;
+}
+
 AMateria& AMateria::operator=(const AMateria& other) {
   if (this != &other) {
     type = other.type;
@@ -40,6 +44,10 @@ std::string const& AMateria::getType(void) const {
   return type;
 }
 
+void AMateria::use(ICharacter& target) {
+  (void)target;
+}
+
 // ICE
 
 Ice::Ice(void) : AMateria() {
@@ -48,7 +56,12 @@ Ice::Ice(void) : AMateria() {
 }
 
 Ice::Ice(const Ice& other) : AMateria(other) {
+  *this = other;
   std::cout << "Ice copy constructor called" << std::endl;
+}
+
+Ice::~Ice() {
+  std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice& Ice::operator=(const Ice& other) {
@@ -75,7 +88,12 @@ Cure::Cure(void) : AMateria() {
 }
 
 Cure::Cure(const Cure& other) : AMateria(other) {
+  *this = other;
   std::cout << "Cure copy constructor called" << std::endl;
+}
+
+Cure::~Cure() {
+  std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other) {
@@ -86,4 +104,8 @@ Cure& Cure::operator=(const Cure& other) {
 
 AMateria* Cure::clone() const {
   return new Cure(*this);
+}
+
+void Cure::use(ICharacter& target) {
+  std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

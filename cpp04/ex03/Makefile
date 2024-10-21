@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ideas
+NAME = materia
 
 CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp AMateria.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp AMateria.cpp ICharacter.cpp)
 
 INCLUDE = -I includes/
 

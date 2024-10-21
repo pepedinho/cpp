@@ -25,6 +25,7 @@ class AMateria
     AMateria(void);
     AMateria(std::string const & type);
     AMateria(const AMateria& other);
+    virtual ~AMateria();
     AMateria& operator=(const AMateria& other);
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
@@ -36,6 +37,7 @@ class Ice : public AMateria
   public:
     Ice(void);
     Ice(const Ice& other);
+    ~Ice();
     Ice& operator=(const Ice& other);
     AMateria* clone() const;
     void use(ICharacter& target);
@@ -46,6 +48,7 @@ class Cure : public AMateria
 public:
   Cure(void);
   Cure(const Cure& other);
+  ~Cure();
   Cure& operator=(const Cure& other);
   AMateria* clone() const;
   void use(ICharacter& target);
