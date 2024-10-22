@@ -6,7 +6,7 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/10/07 20:50:00 by itahri           ###   ########.fr        #
+#    Updated: 2024/10/22 14:53:36 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp AMateria.cpp ICharacter.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp AMateria.cpp ICharacter.cpp IMateriaSource.cpp)
 
 INCLUDE = -I includes/
 
