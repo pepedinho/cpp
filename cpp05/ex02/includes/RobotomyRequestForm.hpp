@@ -22,6 +22,12 @@ class RobotomyRequestForm : public AForm
     private:
       std::string _target;
     public:
+        class RobotomizeFailureException: public std::exception {
+          public:
+            virtual const char * what() const throw() {
+              return "Failed to robotized :/";
+            }
+        };
         RobotomyRequestForm();
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(RobotomyRequestForm const & src);

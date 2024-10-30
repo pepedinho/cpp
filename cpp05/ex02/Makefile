@@ -6,7 +6,7 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/10/30 16:18:08 by itahri           ###   ########.fr        #
+#    Updated: 2024/10/30 22:09:12 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp)
 
 INCLUDE = -I includes/
 
