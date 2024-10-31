@@ -6,11 +6,11 @@
 #    By: itahri <itahri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 14:13:52 by itahri            #+#    #+#              #
-#    Updated: 2024/10/31 14:58:34 by itahri           ###   ########.fr        #
+#    Updated: 2024/10/31 18:12:02 by itahri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bureaucrat
+NAME = convert
 
 CPP = c++
 
