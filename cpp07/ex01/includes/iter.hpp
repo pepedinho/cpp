@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:48:31 by itahri            #+#    #+#             */
-/*   Updated: 2024/11/01 15:05:45 by itahri           ###   ########.fr       */
+/*   Created: 2024/11/01 15:18:02 by itahri            #+#    #+#             */
+/*   Updated: 2024/11/01 15:27:21 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ITER_HPP
 #include <iostream>
-#include <time.h>
-#include "../includes/Base.hpp"
 
-int main() {
-    for (int i = 0; i < 5; ++i) {
-        Base* base = generate();
-
-        std::cout << "Identifying using pointer:              ";
-        identify(base);
-
-        std::cout << "Identifying using reference:            ";
-        identify(*base);
-
-        delete base;
-        std::cout << std::endl;
-    }
-    return 0;
+template <typename T>
+void iter(T* array, std::size_t len, void (*f)(T&)) {
+  for (std::size_t i = 0; i < len; i++) {
+    f(array[i]);
+  }
 }
+
+#endif 

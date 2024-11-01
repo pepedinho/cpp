@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:48:31 by itahri            #+#    #+#             */
-/*   Updated: 2024/11/01 15:05:45 by itahri           ###   ########.fr       */
+/*   Created: 2024/11/01 15:07:09 by itahri            #+#    #+#             */
+/*   Updated: 2024/11/01 15:15:21 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
+
 #include <iostream>
-#include <time.h>
-#include "../includes/Base.hpp"
 
-int main() {
-    for (int i = 0; i < 5; ++i) {
-        Base* base = generate();
+template <typename T>
+void swap(T &a, T &b) {
+  T buf = a;
 
-        std::cout << "Identifying using pointer:              ";
-        identify(base);
-
-        std::cout << "Identifying using reference:            ";
-        identify(*base);
-
-        delete base;
-        std::cout << std::endl;
-    }
-    return 0;
+  a = b;
+  b = buf;
 }
+
+template <typename T>
+T min(T a, T b) {
+  return a < b ? a : b;
+}
+
+template <typename T>
+T max(T a, T b) {
+  return a > b ? a : b;
+}
+
+#endif

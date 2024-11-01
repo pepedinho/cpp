@@ -5,27 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 14:48:31 by itahri            #+#    #+#             */
-/*   Updated: 2024/11/01 15:05:45 by itahri           ###   ########.fr       */
+/*   Created: 2024/11/01 15:21:55 by itahri            #+#    #+#             */
+/*   Updated: 2024/11/01 15:32:53 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <time.h>
-#include "../includes/Base.hpp"
+#include "../includes/iter.hpp"
 
-int main() {
-    for (int i = 0; i < 5; ++i) {
-        Base* base = generate();
+void printz(char& c) {
+  std::cout << "'" << c << "' ";
+}
 
-        std::cout << "Identifying using pointer:              ";
-        identify(base);
+void printw(std::string& str) {
+  std::cout << "\"" << str << "\" ";
+}
 
-        std::cout << "Identifying using reference:            ";
-        identify(*base);
+int main(void) {
+  char array[] = "oui";
+  std::string str_array[] = {"Je", "Pense", "Donc", "Je", "Suis"};
 
-        delete base;
-        std::cout << std::endl;
-    }
-    return 0;
+  ::iter(array, 3, printz);
+  std::cout << std::endl;
+
+  ::iter(str_array, 5, printw);
+  std::cout << std::endl;
 }
