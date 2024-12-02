@@ -43,7 +43,6 @@ class Bureaucrat {
     void incrementGrade(void);
     void decrementGrade(void);
     void signForm(Form &form);
-    friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& fx);
 };
 
 #endif

@@ -12,6 +12,15 @@
 
 #include "../includes/Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(int grade) : _name("unknown") {
+  if (grade <= 0)
+    throw GradeTooHighException();
+  if (grade > 150)
+    throw GradeTooLowException();
+  _grade = grade;
+  std::cout << "Bureaucrat default constructor called" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
   if (grade <= 0)
     throw GradeTooHighException();
@@ -56,10 +65,4 @@ void Bureaucrat::decrementGrade(void) {
   _grade += 1;
 }
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& fx)
-{
-    os << fx.getName();
-    os << ", bureaucrat grade ";
-    os << fx.getGrade();
-    return os;
-}
+

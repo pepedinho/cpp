@@ -46,7 +46,7 @@ class Form {
     int         getGradeToSign(void) const;
     int         getGradeToExecute(void) const;
     void        beSigned(Bureaucrat &signatory);
-    friend std::ostream &operator<<(std::ostream &os, const Form &form);
+    /*friend std::ostream &operator<<(std::ostream &os, const Form &form);*/
 };
 
 #endif

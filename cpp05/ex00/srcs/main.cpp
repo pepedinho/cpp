@@ -13,6 +13,14 @@
 #include <iostream>
 #include "../includes/Bureaucrat.hpp"
 
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& fx)
+{
+    os << fx.getName();
+    os << ", bureaucrat grade ";
+    os << fx.getGrade();
+    return os;
+}
+
 int main() {
     try {
         Bureaucrat john("John", 5);

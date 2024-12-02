@@ -18,6 +18,23 @@
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
 
+
+std::ostream &operator<<(std::ostream &os, const AForm &form) {
+	os << "form name : " << form.getName() << std::endl
+		<< "Signed ? : " << form.getSigned() << std::endl
+		<< "Grade to signed : " << form.getGradeToSign() << std::endl
+		<< "Grade to execute : " << form.getGradeToExecute() << std::endl;
+	return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& fx)
+{
+    os << fx.getName();
+    os << ", bureaucrat grade ";
+    os << fx.getGrade();
+    return os;
+}
+
 int main() {
     Intern someRandomIntern;
 

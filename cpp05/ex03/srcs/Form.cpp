@@ -64,10 +64,4 @@ void AForm::beSigned(Bureaucrat& signatory) {
   _isSigned = true;
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm &form) {
-	os << "form name : " << form.getName() << std::endl
-		<< "Signed ? : " << form.getSigned() << std::endl
-		<< "Grade to signed : " << form.getGradeToSign() << std::endl
-		<< "Grade to execute : " << form.getGradeToExecute() << std::endl;
-	return os;
-}
+

@@ -58,8 +58,6 @@ class AForm {
     void        beSigned(Bureaucrat &signatory);
     
     virtual void execute(const Bureaucrat& executor) const = 0;
-
-    friend std::ostream &operator<<(std::ostream &os, const AForm &form);
 };
 
 #endif
