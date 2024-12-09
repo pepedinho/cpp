@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:28:22 by itahri            #+#    #+#             */
-/*   Updated: 2024/10/31 18:11:43 by itahri           ###   ########.fr       */
+/*   Updated: 2024/12/09 13:33:17 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@
 /*}*/
 
 bool valueCheck(std::string str) {
+  //gestion des cas speciaux
   if (str != "+inf" && str != "-inf" && str != "nan") 
-		return false;
+		return true;
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
 	if (str == "inf" || str == "+inf") {
@@ -46,7 +47,7 @@ bool valueCheck(std::string str) {
 		std::cout << "float: nanf" << std::endl;
 		std::cout << "double: nan" << std::endl;
 	}
-	return true;
+	return false;
 }
 
 void printFloat(float nb) {
@@ -127,7 +128,7 @@ void doubleCase(std::string to_convert) {
 void ScalarConverter::convert(std::string to_convert) {
   /*if (!isInt(to_convert))*/
   /*  std::cout << "Error" << std::endl;*/
-  if (valueCheck(to_convert)) {
+  if (!valueCheck(to_convert)) {
     return;
   } else if (to_convert.find("f") != std::string::npos) {
     floatCase(to_convert);

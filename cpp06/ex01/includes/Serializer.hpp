@@ -6,7 +6,7 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 13:51:28 by itahri            #+#    #+#             */
-/*   Updated: 2024/11/01 14:00:59 by itahri           ###   ########.fr       */
+/*   Updated: 2024/12/09 13:40:26 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdint.h>
 #include "Data.hpp"
 
 class Serializer {
