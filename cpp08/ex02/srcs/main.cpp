@@ -15,6 +15,7 @@
 
 int main()
 {
+  std::cout << "=== MUTANT STACK ===" << std::endl;
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -36,5 +37,27 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+  std::cout << "=== LIST ===" << std::endl;
+  std::list<int> mlst;
+	mlst.push_back(5);
+	mlst.push_back(17);
+	std::cout << mlst.back() << std::endl;
+	mlst.pop_back();
+	std::cout << mlst.size() << std::endl;
+	mlst.push_back(3);
+	mlst.push_back(5);
+	mlst.push_back(737);
+	//[...]
+	mlst.push_back(0);
+  std::list<int>::iterator itt = mlst.begin();
+  std::list<int>::iterator itte = mlst.end();
+	++itt;
+	--itt;
+	while (itt != itte)
+	{
+		std::cout << *itt << std::endl;
+		++itt;
+	}
 	return 0;
 }

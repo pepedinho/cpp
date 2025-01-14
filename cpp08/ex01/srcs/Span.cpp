@@ -37,12 +37,12 @@ void Span::addNumber(int n) {
 }
 
 int Span::shortestSpan(void) {
-  if (_size < 1)
+  if (_size <= 1)
     throw std::invalid_argument("Not enought number in Span");
-  int tmp = _tab[0] - _tab[1];
+  unsigned int tmp = _tab[1] - _tab[0];
   std::sort(_tab.begin(), _tab.end());
   for (size_t i = 1; i < _tab.size(); ++i) {
-        int distance = std::max(_tab[i], _tab[i - 1]) - std::min(_tab[i], _tab[i - 1]);
+        unsigned int distance = std::max(_tab[i], _tab[i - 1]) - std::min(_tab[i], _tab[i - 1]);
         if (distance < tmp) {
             tmp = distance;
       }

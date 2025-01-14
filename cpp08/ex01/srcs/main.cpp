@@ -13,14 +13,15 @@
 #include "../includes/Span.hpp"
 #include <vector>
 
+
 int main() {
-    Span sp(20000);
+    Span sp(20);
 	sp.addNumber(50);
-	std::vector<int> a(1000, 10);
-    sp.addRange< std::vector<int> >(a.begin(), a.end());
+	std::vector<int> a(20, 10);
+  sp.addRange< std::vector<int> >(a.begin(), a.end());
 
-    std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
-    std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+  std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+  std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
 
-    return 0;
+  return 0;
 } 

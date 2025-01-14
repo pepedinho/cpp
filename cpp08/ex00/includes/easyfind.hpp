@@ -19,13 +19,8 @@
 #include <algorithm>
 
 template <typename T>
-int easyfind(const T& tab, int to_find) {
-  typename T::const_iterator it;
-
-  it = std::find(tab.begin(), tab.end(), to_find);
-  if (it == tab.end())
-    throw std::invalid_argument("Impossible to find :/");
-  return *it;
+typename T::iterator easyfind(T& tab, int to_find) {
+  return std::find(tab.begin(), tab.end(), to_find);
 }
 
 #endif 
