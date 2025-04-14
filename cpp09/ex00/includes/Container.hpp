@@ -17,15 +17,23 @@
 #include <fstream>
 #include <map>
 #include <cstdlib>
+#include <vector>
+
+# define EXCHANGE_RATE_DB "data.csv"
 
 class Container {
   private: 
-    std::map<std::string, int> _map;
+    std::map<std::string, float> _map_data;
+    std::map<std::string, float> _map_input;
+    std::vector<std::string> _error_stack;
+    std::ifstream _input;
+    std::ifstream _exchange;
     
   public: 
     Container(std::string filename);
     Container(const Container& src);
     ~Container();
+    void compute();
 };
 
 #endif 
