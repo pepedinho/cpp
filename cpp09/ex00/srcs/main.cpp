@@ -23,6 +23,7 @@ int main (int argc, char *argv[]) {
   
   try {
     Container container = Container(argv[1]);
+    container.compute();
   } catch (std::exception& e) {
       std::cout << e.what() << std::endl;
   }

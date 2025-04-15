@@ -34,6 +34,7 @@ class Container {
     Container(const Container& src);
     ~Container();
     void compute();
+    std::map<std::string, float>::const_iterator  find_closest(const std::string& ref);
 };
 
 #endif 
