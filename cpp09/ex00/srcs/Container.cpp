@@ -55,7 +55,7 @@ Container::Container(std::string input) {
     if (trim(line.substr(0, line.find(('|')))) == "date") {
       continue;
     }
-    _map_data[line.substr(0, line.find(','))] = std::atof(line.substr(line.find(',') + 1).c_str());
+    _map_data[trim(line.substr(0, line.find(',')))] = std::atof(line.substr(line.find(',') + 1).c_str());
     // std::cout << "TEST > " << _map_data[line.substr(0, line.find(','))] << std::endl;
   }
 
@@ -67,14 +67,15 @@ Container::Container(std::string input) {
     if (trim(line.substr(0, line.find(('|')))) == "date") {
       continue;
     } else if (line.find('|') == std::string::npos) {
-      _error_stack.push_back("Error : Bad input => " + line );
+      std::cerr << "Error : Bad input => " + line << std::endl;
       continue;
     } else if (!check_date_format(trim(line.substr(0, line.find(('|')))))) {
-      _error_stack.push_back("Error : Wrong date format => " + line.substr(0, line.find(('|'))));
+      std::cerr << "Error : Wrong date format => " + line.substr(0, line.find(('|'))) << std::endl;
       continue;
     }      
+    compute(trim(line.substr(0, line.find('|'))), std::atof(line.substr(line.find('|') + 1).c_str()));
     // std::cout << "DEBUG F PART => " << trim(line.substr(0, line.find(('|')))) << std::endl;
-    _map_input[line.substr(0, line.find('|'))] = std::atof(line.substr(line.find('|') + 1).c_str());
+    // _map_input[trim(line.substr(0, line.find('|')))] = std::atof(line.substr(line.find('|') + 1).c_str());
     // std::cout << "TEST INPUT > " << _map_input[line.substr(0, line.find('|'))] << std::endl;
   }
 }
@@ -82,37 +83,49 @@ Container::Container(std::string input) {
 
 
 std::map<std::string, float>::const_iterator Container::find_closest(const std::string& ref) {
-  return _map_data.lower_bound(ref);
+  std::map<std::string, float>::const_iterator it = _map_data.lower_bound(ref);
+
+  if (it == _map_data.end()) {
+    if (_map_data.empty())
+      return _map_data.end();
+    --it;
+    return it;
+  }
+
+  if (it->first == ref)
+    return it;
+
+  if (it != _map_data.begin()) {
+    --it;
+    return it;
+  }
+
+  return _map_data.end();
 }
 
-void Container::compute() {
-  std::map<std::string, float>::iterator it;
+void Container::compute(const std::string& time, float value) {
   std::string date;
   float rate;
 
-  for (it = _map_input.begin(); it != _map_input.end(); it ++) {
-    if (it->second > 1000) {
+    if (value > 1000) {
       std::cerr << "error : too large a number." << std::endl;
-      continue; 
-    } else if (it->second < 0) {
+      return;
+    } else if (value < 0) {
       std::cerr << "error : not a positive number." << std::endl;
-      continue;
+      return;  
     }
-    if (_map_data.find(it->first) == _map_data.end()) {
-      std::map<std::string, float>::const_iterator tmp = find_closest(it->first);
+    if (_map_data.find(time) == _map_data.end()) {
+      // std::cout << "NOT FOUND => " << "\""<< it->first << "\"" << std::endl;
+      std::map<std::string, float>::const_iterator tmp = find_closest(time);
       date = tmp->first;
       rate = tmp->second;
+      // std::cout << "REPLACE BY => " << "\""<< date << "\"" << std::endl;
     } else {
-      rate = _map_data[it->first];
-      date = it->first;
+      rate = _map_data[time];
+      date = time;
     }
-    std::cout << "DEBUG DATE => " << date << std::endl;
-    std::cout << date << " => " << it->second << " = " << it->second * rate << std::endl;
+    std::cout << time << " => " << value << " = " << value * rate << std::endl;
     // _map_data[it->first]
-  }
-  for (std::vector<std::string>::iterator ite = _error_stack.begin(); ite != _error_stack.end(); ite++) {
-    std::cout << *ite << std::endl;
-  }
 }
 
 Container::~Container() {};
