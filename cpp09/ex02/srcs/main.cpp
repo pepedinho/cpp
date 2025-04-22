@@ -10,4 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/Jhonson.hpp"
 
+int main (int argc, char *argv[]) {
+  
+  if (argc < 2) {
+    std::cout << "Not enought arguments !" << std::endl;
+    return 1;
+  }
+
+  Jhonson t = Jhonson(argc, argv);
+
+  
+  return 0;
+}

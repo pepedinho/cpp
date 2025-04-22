@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = RPN
+NAME = PmergeMe
 
 CPP = c++
 
 CPP_FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g3
 
-SRC_FILE = $(addprefix srcs/, main.cpp Container.cpp)
+SRC_FILE = $(addprefix srcs/, main.cpp Jhonson.cpp)
 
 INCLUDE = -I includes/
 

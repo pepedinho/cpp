@@ -12,4 +12,14 @@
 
 #include "../includes/Jhonson.hpp"
 
+Jhonson::Jhonson(int argc, char *argv[]) {
+  for (int i = 1; i < argc; i++) {
+    _arg.push_back(atoi(argv[i]));
+  }
+
+  for (size_t i = 0; i < _arg.size(); i++) {
+    std::cout << _arg[i];
+  }
+  std::cout << std::endl;
+}
 

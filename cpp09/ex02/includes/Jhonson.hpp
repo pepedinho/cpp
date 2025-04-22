@@ -20,11 +20,12 @@
 
 class Jhonson {
   private: 
+    std::vector<int> _arg;
     std::vector<int> _big;
     std::vector<int> _small;
 
   public:
-    Jhonson();
+    Jhonson(int argc, char *argv[]);
 };
 
 
