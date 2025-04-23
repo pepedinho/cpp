@@ -26,6 +26,7 @@ class Jhonson {
 
   public:
     Jhonson(int argc, char *argv[]);
+    std::vector<int> make_pairs(std::vector<int> tab);
 };
 
 
