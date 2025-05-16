@@ -62,13 +62,11 @@ std::vector<int> JhonsonVec::make_pairs(std::vector<int> tab) {
     if (it != tab.end()) {
       big.push_back(std::max(current, *it));
       small.push_back(std::min(current, *it));
-      std::cout << "[" << current << ", " << *it << "]" << std::endl;
       it++;
     } else {
       small.push_back(current);
     }
   }
-  std::cout << "-----------------------" << std::endl;
   if (small.size() == 1)
     return (small.push_back(big[0]), small);
   result = make_pairs(big);
@@ -104,24 +102,16 @@ std::vector<int> JhonsonVec::make_pairs(std::vector<int> tab) {
   return result;
 }
 
-int max(int a, int b) {
-  return a > b ? a : b;
-}
-
-int min(int a, int b) {
-  return a < b ? a : b;
-}
-
-
 /* DEQUEU IMPLEMENTATION */
 
 
 JhonsonQueue::JhonsonQueue(int argc, char *argv[]) {
-for (int i = 1; i < argc; i++) {
-    if (std::find(_arg.begin(), _arg.end(), atoi(argv[i])) != _arg.end()) {
-      throw std::invalid_argument("Found two time the same element");
+  for (int i = 1; i < argc; i++) {
+      if (std::find(_arg.begin(), _arg.end(), atoi(argv[i])) != _arg.end()) {
+        throw std::invalid_argument("Found two time the same element");
+      }
+      _arg.push_back(atoi(argv[i]));
     }
-    _arg.push_back(atoi(argv[i]));
 
     for (size_t i = 0; i < _arg.size(); i++) {
       std::cout << _arg[i];
@@ -129,7 +119,11 @@ for (int i = 1; i < argc; i++) {
     std::cout << std::endl;
 
     std::deque<int> oui = make_pairs(_arg);
-  }
+    std::cout << "SORT : ";
+    for (size_t i = 0; i < oui.size(); i++) {
+      std::cout << oui[i] << " ";
+    }
+    std::cout << std::endl;
 }
 
 std::deque<int> JhonsonQueue::make_pairs(std::deque<int> tab) {
@@ -147,14 +141,12 @@ std::deque<int> JhonsonQueue::make_pairs(std::deque<int> tab) {
       big.push_back(std::max(current, *it)); 
       // et le plus petit dans small -_-
       small.push_back(std::min(current, *it));
-      std::cout << "[" << current << ", " << *it << "]" << std::endl;
       it++;
     } else {
       // si il ne reste qu'un seul element et qu'on ne peux pas former de pairs on le met dans small
       small.push_back(current);
     }
   }
-  std::cout << "-----------------------" << std::endl;
   if (small.size() == 1)
     return(small.push_back(big[0]), small);
   result = make_pairs(big);
@@ -177,7 +169,7 @@ std::deque<int> JhonsonQueue::make_pairs(std::deque<int> tab) {
       last_j = jmax;
     } else {
       // si l'indice depasse la taille on applique la meme logique mais jusq'a small.size()
-      for (size_t j = jmax; j < small.size(); ++j) {
+      for (size_t j = last_j; j < small.size(); ++j) {
         result.insert(std::lower_bound(result.begin(), result.end(), small[j]), small[j]);
       }
       break;
