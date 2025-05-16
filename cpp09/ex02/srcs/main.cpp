@@ -6,11 +6,11 @@
 /*   By: itahri <itahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:01:34 by itahri            #+#    #+#             */
-/*   Updated: 2025/04/22 17:03:07 by itahri           ###   ########.fr       */
+/*   Updated: 2025/05/16 19:07:40 by itahri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Jhonson.hpp"
+#include "../includes/PmergeMe.hpp"
 
 int main (int argc, char *argv[]) { 
   if (argc < 2) {
@@ -19,7 +19,7 @@ int main (int argc, char *argv[]) {
   }
   
   try {
-    Jhonson t = Jhonson(argc, argv);
+    JhonsonVec t = JhonsonVec(argc, argv);
   } catch (std::exception& e) {
     std::cout << e.what() << std::endl;
   }
