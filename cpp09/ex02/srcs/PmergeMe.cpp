@@ -29,6 +29,8 @@
 }
 
 JhonsonVec::JhonsonVec(int argc, char *argv[]) {
+  struct timeval s, e;
+
   for (int i = 1; i < argc; i++) {
     if (std::find(_arg.begin(), _arg.end(), atoi(argv[i])) != _arg.end()) {
       throw std::invalid_argument("Found two time the same element");
@@ -36,17 +38,29 @@ JhonsonVec::JhonsonVec(int argc, char *argv[]) {
     _arg.push_back(atoi(argv[i]));
   }
 
-  for (size_t i = 0; i < _arg.size(); i++) {
-    std::cout << _arg[i];
+  std::cout << "Before: ";
+  for (size_t i = 0; i < 5; i++) {
+    std::cout << _arg[i] << " ";
   }
+  if (_arg.size() > 5) 
+    std::cout << "[...]";
   std::cout << std::endl;
 
+  gettimeofday(&s, 0);
   std::vector<int> oui = make_pairs(_arg);
-  std::cout << "SORT : ";
-  for (size_t i = 0; i < oui.size(); i++) {
+  gettimeofday(&e, 0);
+  long sec = e.tv_sec - s.tv_sec;
+  long mic_sec = e.tv_usec - s.tv_usec;
+  double t = sec + mic_sec * 1e-6;
+
+  std::cout << "After: ";
+  for (size_t i = 0; i < 5; i++) {
     std::cout << oui[i] << " ";
   }
+  if (oui.size() > 5) 
+    std::cout << "[...]";
   std::cout << std::endl;
+  std::cout << "Time to process a range of " << _arg.size() << " elements with std::vector : " << t << " sec" << std::endl;
 }
 
 std::vector<int> JhonsonVec::make_pairs(std::vector<int> tab) {
@@ -112,18 +126,16 @@ JhonsonQueue::JhonsonQueue(int argc, char *argv[]) {
       }
       _arg.push_back(atoi(argv[i]));
     }
-
-    for (size_t i = 0; i < _arg.size(); i++) {
-      std::cout << _arg[i];
-    }
-    std::cout << std::endl;
-
+    
+    struct timeval s, e;
+    gettimeofday(&s, 0);
     std::deque<int> oui = make_pairs(_arg);
-    std::cout << "SORT : ";
-    for (size_t i = 0; i < oui.size(); i++) {
-      std::cout << oui[i] << " ";
-    }
-    std::cout << std::endl;
+    gettimeofday(&e, 0);
+    long sec = e.tv_sec - s.tv_sec;
+    long mic_sec = e.tv_usec - s.tv_usec;
+    double t = sec + mic_sec * 1e-6;
+
+	  std::cout << "Time to process a range of " << _arg.size() << " elements with std::deque : " << t << " sec" << std::endl;
 }
 
 std::deque<int> JhonsonQueue::make_pairs(std::deque<int> tab) {

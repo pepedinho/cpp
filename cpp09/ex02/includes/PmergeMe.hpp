@@ -18,6 +18,8 @@
 #include <vector>
 #include <cstdlib>
 #include <deque>
+#include <ctime>
+#include <sys/time.h>
 
 class JhonsonVec {
   private: 
